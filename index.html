@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <form id="userForm" onsubmit="submitForm(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" pattern="[A-Za-z ]+" required>
+
+    <label for="branch">Branch:</label>
+    <input type="text" id="branch" name="branch" pattern="[A-Za-z ]+" required>
+
+    <label for="contact">Contact Number:</label>
+    <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="enrollment">Enrollment Number:</label>
+    <input type="text" id="enrollment" name="enrollment" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label for="request">What I Want:</label>
+    <textarea id="request" name="request" rows="4" pattern="[A-Za-z ]+" required></textarea>
+
+    <label for="idType">Government ID Type:</label>
+    <select id="idType" name="idType" required>
+      <option value="PAN">PAN Card</option>
+      <option value="Aadhar">Aadhar Card</option>
+      <option value="DrivingLicense">Driving License</option>
+      <option value="VoterID">Voter ID</option>
+    </select>
+
+    <label for="idNumber">ID Number:</label>
+    <input type="text" id="idNumber" name="idNumber" required>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="displayData">
+    <h2>Submitted Data:</h2>
+    <pre id="userData"></pre>
+    <button onclick="editData()">Edit Data</button>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
